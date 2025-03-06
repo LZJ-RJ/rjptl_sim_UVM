@@ -1,5 +1,4 @@
 `timescale 1ps/1ps
-
 package rjptl_pkg;
 
 // Part 1 - Official UVM

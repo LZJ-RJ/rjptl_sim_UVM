@@ -25,6 +25,10 @@ typedef union packed {
 } rj_pkt_u;
 
 class rj_packet extends uvm_object;
+    // unprotected: It means this block can let user to see, don't need to encrypt
+    rand rj_pkt_h_level_e level_for_user;
+
+    // proteced, below
     const int pkt_idx;
     static int global_pkt_idx_cnt;
     rand rj_pkt_u u;
@@ -34,6 +38,7 @@ class rj_packet extends uvm_object;
         // for header
         u.s.h.kind == RJ_PACKET;
         u.s.h.level inside {SUPER_LIKE, NORMAL_LIKE, LITTLE_LIKE};
+        level_for_user == u.s.h.level;
 
         // for body
         u.s.b != 0;
@@ -65,7 +70,7 @@ class rj_packet extends uvm_object;
     endfunction
 
     function void unpack();
-        u.byte_view = 0;
+        u.byte_view = '0;
         for (int i=0; i<RJ_PKT_SIZE; i++)
             u.byte_view[i] = raw_byte_q[i];
     endfunction
