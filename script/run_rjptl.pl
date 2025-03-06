@@ -16,7 +16,7 @@ if ($opt_h) {
     print "     -t <test>        testcase file name\n";
     print "     -s <seed>        random seed number\n";
     print "     run_rjptl.pl\n";
-    print "     run_rjptl.pl -R +best_rjptl_level=2 -M +define+RJPTL_DUMP_VCD -t rjptlt_basic.sv\n";
+    print "     run_rjptl.pl -R +test_runtime -R +clk_period=100 -M +define+RJ_DUMP_VCD -t super_like_rj_test_case.sv\n";
     exit (1);
 }
 
@@ -49,6 +49,7 @@ $files .= " +incdir+$PATH_RJPTL/src\n";
 # $files .= " $PATH_UVM/src/uvm_pkg.sv\n";
 # $files .= " $PATH_UVM/src/dpi/uvm_dpi.cc\n";
 # $files .= " $PATH_UVM/src/uvm_macros.svh\n";
+$files .= " $PATH_RJPTL/src/interface.sv\n";
 $files .= " $PATH_RJPTL/src/pkg.sv\n";
 $files .= " $PATH_RJPTL/test_bench/top.sv\n";
 print "Step 2: Prepare BEST RJPTL files - End ...\n";
@@ -56,9 +57,6 @@ print "Step 2: Prepare BEST RJPTL files - End ...\n";
 print "Step 3: Search the path to find the test - Start ...\n";
 @test_dir_array = ("./", "test_case/");
 $files .= " +incdir+$PATH_RJPTL/test_case\n";
-open(FILE, ">best_rjptl_bfms.filelist");
-print FILE "$files\n";
-close(FILE);
 if ($opt_t) {
     $test = $opt_t;
     if ($test ne "" && $test =~ m/\.sv/) {
@@ -80,7 +78,11 @@ if ($opt_s) {
 } else {
     $seed = "1234";
 }
-# foreach(@opt_M)  { $cmd .= " -M $_ ";}
+$files .= " $runtime ";
+$files .= " $macro ";
+open(FILE, ">best_rjptl_bfms.filelist");
+print FILE "$files\n";
+close(FILE);
 print "Step 4: Prepare run command options - End ...\n";
 
 # /*
@@ -107,7 +109,6 @@ print "Step 5: ### Run Best testcase in UVM env: $testcase ... ###\n\n\n";
     # " -uvmhome /home/jaslin86/uvm-1.2",
     # " +UVM_VERBOSITY=UVM_DEBUG",
     " @runtime",
-    " @macro",
 );
 # add \ and \n
 foreach $t (@cmds) {
