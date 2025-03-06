@@ -11,8 +11,8 @@ class rj_sequence extends uvm_sequence #(rj_transaction);
         repeat (3) begin
             tr = new("tr");
             start_item(tr); // 100: This is about priority, may use default: -1
-            assert(tr.randomize() with {tr.data.size() == 200;});
-            `uvm_info("rj_sequence", $sformatf("tr.data: %p", tr.data), UVM_LOW);
+            assert(tr.randomize() with {tr.data_q.size() == 200;});
+            `uvm_info("rj_sequence", $sformatf("tr.data_q: %p", tr.data_q), UVM_LOW);
             finish_item(tr);
         //     #10; // Can add delay
         end
