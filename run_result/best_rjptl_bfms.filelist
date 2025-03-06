@@ -1,0 +1,7 @@
+ +incdir+/home/jaslin86/work_latest_version/rjptl_sim_UVM/test_bench
+ +incdir+/home/jaslin86/work_latest_version/rjptl_sim_UVM/src
+ /home/jaslin86/work_latest_version/rjptl_sim_UVM/src/interface.sv
+ /home/jaslin86/work_latest_version/rjptl_sim_UVM/src/pkg.sv
+ /home/jaslin86/work_latest_version/rjptl_sim_UVM/test_bench/top.sv
+ +incdir+/home/jaslin86/work_latest_version/rjptl_sim_UVM/test_case
+  +test_runtime  +clk_period=100    +define+RJ_DUMP_VCD  

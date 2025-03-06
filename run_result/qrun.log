@@ -1,0 +1,48 @@
+QuestaSim qrun 2024.2 Utility 2024.05 May 20 2024
+Start time: 08:25:06 on Mar 06,2025
+qrun -f best_rjptl_bfms.filelist "+UVM_TESTNAME=super_like_rj_test_case" -sv -R -sv_seed 666 -l mti.log "+test_runtime" "+clk_period=100" 
+Creating library 'qrun.out/work'.
+QuestaSim vlog 2024.2 Compiler 2024.05 May 20 2024
+Start time: 08:25:07 on Mar 06,2025
+vlog "+incdir+/home/jaslin86/work_latest_version/rjptl_sim_UVM/test_bench" "+incdir+/home/jaslin86/work_latest_version/rjptl_sim_UVM/src" "+incdir+/home/jaslin86/work_latest_version/rjptl_sim_UVM/test_case" "+define+RJ_DUMP_VCD" -sv /home/jaslin86/work_latest_version/rjptl_sim_UVM/src/interface.sv /home/jaslin86/work_latest_version/rjptl_sim_UVM/src/pkg.sv /home/jaslin86/work_latest_version/rjptl_sim_UVM/test_bench/top.sv -work qrun.out/work -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr 
+-- Compiling interface rj_if
+-- Compiling package rjptl_pkg
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+** Note: (vlog-2286) /home/jaslin86/work_latest_version/rjptl_sim_UVM/src/pkg.sv(20): Using implicit +incdir+/u/release/questa/2024.2/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+-- Compiling module rj_top
+-- Importing package rjptl_pkg
+
+Top level modules:
+	rj_top
+End time: 08:25:07 on Mar 06,2025, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+QuestaSim vopt 2024.2 Compiler 2024.05 May 20 2024
+Start time: 08:25:08 on Mar 06,2025
+vopt -l mti.log -findtoplevels qrun.out/work+1+ -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=2 
+
+Top level modules:
+	rj_top
+
+Analyzing design...
+-- Loading module rj_top
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Importing package rjptl_pkg
+-- Loading package mtiUvm.questa_uvm_pkg
+-- Loading interface rj_if
+Optimizing 6 design-units (inlining 1/2 module instances):
+-- Optimizing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)(fast)
+-- Optimizing package mtiUvm.questa_uvm_pkg(fast)
+-- Optimizing package rjptl_pkg(fast)
+-- Inlining interface rj_if(fast__2)
+-- Optimizing module rj_top(fast)
+-- Optimizing interface rj_if(fast)
+Optimized design name is qrun_opt
+End time: 08:25:11 on Mar 06,2025, Elapsed time: 0:00:03
+Errors: 0, Warnings: 0
+End time: 08:25:13 on Mar 06,2025, Elapsed time: 0:00:07
+*** Summary *********************************************
+    qrun: Errors:   0, Warnings:   0
+    vlog: Errors:   0, Warnings:   0
+    vopt: Errors:   0, Warnings:   0
+    vsim: Errors:   0, Warnings:   0
+  Totals: Errors:   0, Warnings:   0

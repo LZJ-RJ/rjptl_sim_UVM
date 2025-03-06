@@ -1,0 +1,1 @@
+/u/release/questa/2024.2/questasim/linux/VisualizerRls/bin/viscom -nolock -quiet -jmem_size 53280960 -findtoplevels qrun.out/work+1+ -work qrun.out/work -o qrun_opt +__design_bin_path+/home/jaslin86/work_latest_version/rjptl_sim_UVM/run_result
