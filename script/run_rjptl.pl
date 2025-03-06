@@ -16,7 +16,7 @@ if ($opt_h) {
     print "     -t <test>        testcase file name\n";
     print "     -s <seed>        random seed number\n";
     print "     run_rjptl.pl\n";
-    print "     run_rjptl.pl -R +test_runtime -R +clk_period=100 -M +define+RJ_DUMP_VCD -t super_like_rj_test_case.sv\n";
+    print "     run_rjptl.pl -R +test_runtime -R +clk_period=100 -M +define+RJ_DUMP_VCD -t super_like_rj_test_case.sv -s 666\n";
     exit (1);
 }
 

@@ -1,0 +1,130 @@
+# vsim "+test_runtime" "+clk_period=100" "+UVM_TESTNAME=super_like_rj_test_case" -sv_seed 666 -l mti.log "+test_runtime" "+clk_period=100" -lib qrun.out/work -c -do "run -all; quit -f" -statslog qrun.out/stats_log qrun_opt 
+# Start time: 08:25:12 on Mar 06,2025
+# //  Questa Sim
+# //  Version 2024.2 linux May 20 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.rj_if(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.rjptl_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.rj_top(fast)
+# Loading /u/release/questa/2024.2/questasim/uvm-1.1d/linux/uvm_dpi.so
+# run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# test runtime argument successfully
+# modify clk_period(=100) value by runtime argument successfully
+# UVM_INFO @ 0: reporter [RNTST] Running test super_like_rj_test_case...
+# UVM_INFO /home/jaslin86/work_latest_version/rjptl_sim_UVM/test_case/super_like_rj_test_case.sv(19) @ 0: uvm_test_top [TEST] Test is running...
+# UVM_INFO /home/jaslin86/work_latest_version/rjptl_sim_UVM/test_case/super_like_rj_seq.sv(35) @ 0: uvm_test_top.env01.i_agent.seqr@@super_like_rj_seq [super_like_rj_seq] 
+#     rj_packet#0(Kind:'hcc(RJ_PACKET))
+#          header: '{kind:RJ_PACKET, level:SUPER_LIKE}
+#          body: '{raw_data:'{155, 41}}
+#          footer(checksum): '{checksum:'{180, 20}}
+#          byte_view: '{180, 20, 155, 41, 204, 255}
+# 
+# UVM_INFO /home/jaslin86/work_latest_version/rjptl_sim_UVM/src/driver.sv(63) @ 0: uvm_test_top.env01.i_agent.drv [driver] pkt.sprint(1): 
+#     rj_packet#1(Kind:'hcc(RJ_PACKET))
+#          header: '{kind:RJ_PACKET, level:SUPER_LIKE}
+#          body: '{raw_data:'{155, 41}}
+#          footer(checksum): '{checksum:'{180, 20}}
+#          byte_view: '{180, 20, 155, 41, 204, 255}
+# 
+# UVM_INFO /home/jaslin86/work_latest_version/rjptl_sim_UVM/src/monitor.sv(50) @ 4800: uvm_test_top.env01.o_agent.mon [rj_monitor] 
+#     rj_packet#2(Kind:'hcc(RJ_PACKET))
+#          header: '{kind:RJ_PACKET, level:SUPER_LIKE}
+#          body: '{raw_data:'{155, 41}}
+#          footer(checksum): '{checksum:'{180, 20}}
+#          byte_view: '{180, 20, 155, 41, 204, 255}
+# 
+# UVM_INFO /home/jaslin86/work_latest_version/rjptl_sim_UVM/src/monitor.sv(50) @ 4800: uvm_test_top.env01.i_agent.mon [rj_monitor] 
+#     rj_packet#3(Kind:'hcc(RJ_PACKET))
+#          header: '{kind:RJ_PACKET, level:SUPER_LIKE}
+#          body: '{raw_data:'{155, 41}}
+#          footer(checksum): '{checksum:'{180, 20}}
+#          byte_view: '{180, 20, 155, 41, 204, 255}
+# 
+# UVM_INFO /home/jaslin86/work_latest_version/rjptl_sim_UVM/test_case/super_like_rj_seq.sv(35) @ 4800: uvm_test_top.env01.i_agent.seqr@@super_like_rj_seq [super_like_rj_seq] 
+#     rj_packet#4(Kind:'hcc(RJ_PACKET))
+#          header: '{kind:RJ_PACKET, level:SUPER_LIKE}
+#          body: '{raw_data:'{69, 191}}
+#          footer(checksum): '{checksum:'{137, 95}}
+#          byte_view: '{137, 95, 69, 191, 204, 255}
+# 
+# UVM_INFO /home/jaslin86/work_latest_version/rjptl_sim_UVM/src/scoreboard.sv(25) @ 4800: uvm_test_top.env01.sb [rj_scoreboard] SB Received input data: '{255, 204, 41, 155, 20, 180}
+# UVM_INFO /home/jaslin86/work_latest_version/rjptl_sim_UVM/src/scoreboard.sv(26) @ 4800: uvm_test_top.env01.sb [rj_scoreboard] SB Received output data: '{255, 204, 41, 155, 20, 180}
+# UVM_INFO /home/jaslin86/work_latest_version/rjptl_sim_UVM/src/driver.sv(63) @ 4800: uvm_test_top.env01.i_agent.drv [driver] pkt.sprint(1): 
+#     rj_packet#5(Kind:'hcc(RJ_PACKET))
+#          header: '{kind:RJ_PACKET, level:SUPER_LIKE}
+#          body: '{raw_data:'{69, 191}}
+#          footer(checksum): '{checksum:'{137, 95}}
+#          byte_view: '{137, 95, 69, 191, 204, 255}
+# 
+# UVM_INFO /home/jaslin86/work_latest_version/rjptl_sim_UVM/src/monitor.sv(50) @ 9600: uvm_test_top.env01.o_agent.mon [rj_monitor] 
+#     rj_packet#6(Kind:'hcc(RJ_PACKET))
+#          header: '{kind:RJ_PACKET, level:SUPER_LIKE}
+#          body: '{raw_data:'{69, 191}}
+#          footer(checksum): '{checksum:'{137, 95}}
+#          byte_view: '{137, 95, 69, 191, 204, 255}
+# 
+# UVM_INFO /home/jaslin86/work_latest_version/rjptl_sim_UVM/src/monitor.sv(50) @ 9600: uvm_test_top.env01.i_agent.mon [rj_monitor] 
+#     rj_packet#7(Kind:'hcc(RJ_PACKET))
+#          header: '{kind:RJ_PACKET, level:SUPER_LIKE}
+#          body: '{raw_data:'{69, 191}}
+#          footer(checksum): '{checksum:'{137, 95}}
+#          byte_view: '{137, 95, 69, 191, 204, 255}
+# 
+# UVM_INFO /home/jaslin86/work_latest_version/rjptl_sim_UVM/src/scoreboard.sv(25) @ 9600: uvm_test_top.env01.sb [rj_scoreboard] SB Received input data: '{255, 204, 191, 69, 95, 137}
+# UVM_INFO /home/jaslin86/work_latest_version/rjptl_sim_UVM/src/scoreboard.sv(26) @ 9600: uvm_test_top.env01.sb [rj_scoreboard] SB Received output data: '{255, 204, 191, 69, 95, 137}
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   16
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST]     1
+# [driver]     2
+# [rj_monitor]     4
+# [rj_scoreboard]     4
+# [super_like_rj_seq]     2
+# ** Note: $finish    : /u/release/questa/2024.2/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 9600 ps  Iteration: 106  Instance: /rj_top
+# End time: 08:25:13 on Mar 06,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
