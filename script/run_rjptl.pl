@@ -24,8 +24,8 @@ if ($opt_h) {
 #     Default
 #     # Using UVM, no pure SV
 #     # Using MTI, no other simulators, e.g., Synopsys VCS, Cadence NC
-#     # +UVM_TESTNAME=rjptlt_uvm_basic
-#     # Testbench is rjptl_top.sv
+#     # +UVM_TESTNAME=super_like_rj_test_case
+#     # Testbench is top.sv
 # */
 print "###There are 5 steps.###\n";
 print "Step 1: Environment variables - Start ...\n";
@@ -49,7 +49,6 @@ $files .= " +incdir+$PATH_RJPTL/src\n";
 # $files .= " $PATH_UVM/src/uvm_pkg.sv\n";
 # $files .= " $PATH_UVM/src/dpi/uvm_dpi.cc\n";
 # $files .= " $PATH_UVM/src/uvm_macros.svh\n";
-
 $files .= " $PATH_RJPTL/src/pkg.sv\n";
 $files .= " $PATH_RJPTL/test_bench/top.sv\n";
 print "Step 2: Prepare BEST RJPTL files - End ...\n";
@@ -68,7 +67,6 @@ if ($opt_t) {
 } else {
     $test = "super_like_rj_test_case";
 }
-
 print "Find test: $test\n";
 print "Step 3: Search the path to find the test - End ...\n";
 
@@ -82,7 +80,6 @@ if ($opt_s) {
 } else {
     $seed = "1234";
 }
-
 # foreach(@opt_M)  { $cmd .= " -M $_ ";}
 print "Step 4: Prepare run command options - End ...\n";
 
@@ -106,7 +103,7 @@ print "Step 5: ### Run Best testcase in UVM env: $testcase ... ###\n\n\n";
     " -sv",
     " -R -sv_seed $seed",
     " -l mti.log",
-    " -uvmcontrol=all +UVM_COMPONENT_TRACE +UVM_VERBOSITY=UVM_DEBUG", 
+#     " -uvmcontrol=all +UVM_COMPONENT_TRACE +UVM_VERBOSITY=UVM_DEBUG",
     # " -uvmhome /home/jaslin86/uvm-1.2",
     # " +UVM_VERBOSITY=UVM_DEBUG",
     " @runtime",

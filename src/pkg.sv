@@ -15,13 +15,18 @@ typedef class rj_sequencer;
 typedef class rj_driver;
 typedef class rj_monitor;
 typedef class rj_scoreboard;
+typedef class rj_packet;
 
 // Part 3 - includes all base files
+`include "enum.svh"
+`include "packet.sv"
+
 `include "transaction.sv"
 `include "env.sv"
 `include "agent.sv"
 `include "sequence.sv"
 `include "sequencer.sv"
+
 `include "driver.sv"
 `include "monitor.sv"
 `include "scoreboard.sv"

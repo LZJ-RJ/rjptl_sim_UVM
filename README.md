@@ -27,4 +27,4 @@ Packet Detail
 
 *Packet Footer*: 2 bytes
 
-    - Checksum which is same as cfg_info
+    - Checksum: Add the Packet Header and the Packet Body, then divide the result by two.
