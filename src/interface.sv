@@ -1,6 +1,6 @@
 `timescale 1ps/1ps
 
-interface rj_if;
+interface rj_intf_tx;
     logic [1:0] rj_lane; // [0]: for data; [1]: for clk
 
     // set clock by high low period 
@@ -16,4 +16,7 @@ interface rj_if;
         rj_lane[1] = 1;
         # t_h;
     endtask
+endinterface
+interface rj_intf_rx;
+    logic [1:0] rj_lane; // [0]: for data; [1]: for clk
 endinterface
