@@ -3,8 +3,9 @@ class rj_monitor extends uvm_monitor;
 
     uvm_tlm_analysis_fifo #(rj_transaction) fifo;
 
-    virtual rj_if intf;
-    bit is_input;
+    virtual rj_intf_tx my_intf_tx;
+    virtual rj_intf_rx my_intf_rx;
+    bit is_tx=0;
 
     function new(string name, uvm_component parent);
         super.new(name, parent);
@@ -15,12 +16,18 @@ class rj_monitor extends uvm_monitor;
         super.build_phase(phase);
     endfunction
 
-    function void assign_vi(virtual rj_if intf);
-        this.intf = intf;
+    function void assign_vi_tx(virtual rj_intf_tx my_intf);
+        this.my_intf_tx = my_intf;
+    endfunction
+    function void assign_vi_rx(virtual rj_intf_rx my_intf);
+        this.my_intf_rx = my_intf;
     endfunction
 
     task main_phase(uvm_phase phase);
-        wait (this.intf != null);
+        if (is_tx)
+            wait (this.my_intf_tx != null);
+        else
+            wait (this.my_intf_rx != null);
         handle_intf();
     endtask
 
@@ -31,8 +38,13 @@ class rj_monitor extends uvm_monitor;
         fork
             forever begin
                 // Get data from interface
-                @ (negedge intf.rj_lane[1]);
-                b_q.push_back(intf.rj_lane[0]);
+                if (is_tx) begin
+                    @ (negedge my_intf_tx.rj_lane[1]);
+                    b_q.push_back(my_intf_tx.rj_lane[0]);
+                end else begin
+                    @ (negedge my_intf_rx.rj_lane[1]);
+                    b_q.push_back(my_intf_rx.rj_lane[0]);
+                end
 
                 if (b_q.size() == 8*RJ_PKT_SIZE) begin
                     bit [7:0] b_q2;

@@ -1,17 +1,3 @@
-/*
- * |-----------------------------------------------------------------------|
- * |                                                                       |
- * |   Copyright Avery Design Systems, Inc. 2014.                          |
- * |     All Rights Reserved.       Licensed Software.                     |
- * |                                                                       |
- * |                                                                       |
- * | THIS IS UNPUBLISHED PROPRIETARY SOURCE CODE OF AVERY DESIGN SYSTEMS   |
- * | The copyright notice above does not evidence any actual or intended   |
- * | publication of such source code.                                      |
- * |                                                                       |
- * |-----------------------------------------------------------------------|
- */
-
 `timescale 1ps/1ps
 package rjptl_pkg;
 

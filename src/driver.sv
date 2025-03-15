@@ -2,7 +2,7 @@ class rj_driver extends uvm_driver #(rj_transaction);
     `uvm_component_utils(rj_driver)
 
     rj_packet pkt_q[$];
-    virtual rj_if intf;
+    virtual rj_intf_tx intf;
 
     function new(string name, uvm_component parent);
         super.new(name, parent);
@@ -12,7 +12,7 @@ class rj_driver extends uvm_driver #(rj_transaction);
         super.build_phase(phase);
     endfunction
 
-    function void assign_vi(virtual rj_if intf);
+    function void assign_vi(virtual rj_intf_tx intf);
         this.intf = intf;
     endfunction
 

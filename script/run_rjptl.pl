@@ -44,11 +44,13 @@ print "Step 2: Prepare BEST RJPTL files - Start ...\n";
 $files .= " +incdir+$PATH_RJPTL/test_bench\n";
 $files .= " +incdir+$PATH_RJPTL/src\n";
 
+print "Step 2-2: Add DUT files - Start ...\n";
+$files .= " +incdir+$PATH_RJPTL/src.dut\n";
+$files .= " $PATH_RJPTL/src.dut/pkg_dut.sv\n";
+$files .= " $PATH_RJPTL/test_bench/dut.sv\n";
+print "Step 2-2: Add DUT files - End ...\n";
+
 # Use default uvm-1.1 via Questasim simulator
-# $files .= " +incdir+$PATH_UVM/src\n";
-# $files .= " $PATH_UVM/src/uvm_pkg.sv\n";
-# $files .= " $PATH_UVM/src/dpi/uvm_dpi.cc\n";
-# $files .= " $PATH_UVM/src/uvm_macros.svh\n";
 $files .= " $PATH_RJPTL/src/interface.sv\n";
 $files .= " $PATH_RJPTL/src/pkg.sv\n";
 $files .= " $PATH_RJPTL/test_bench/top.sv\n";
@@ -78,6 +80,7 @@ if ($opt_s) {
 } else {
     $seed = "1234";
 }
+
 $files .= " $runtime ";
 $files .= " $macro ";
 open(FILE, ">best_rjptl_bfms.filelist");

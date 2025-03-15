@@ -1,3 +1,12 @@
-BEGIN 3:rj_if:fast__1:work
+BEGIN 3:rj_intf_tx:fast__1:work
     rj_lane :  1:rjptl_pkg:fast:work
+END 
+BEGIN 3:rj_intf_tx:fast__2:work
+    rj_lane :  1:rj_top:fast:work
+END 
+BEGIN 3:rj_intf_rx:fast__1:work
+    rj_lane :  1:rjptl_pkg:fast:work
+END 
+BEGIN 3:rj_intf_rx:fast__2:work
+    rj_lane :  1:rj_top:fast:work
 END 
